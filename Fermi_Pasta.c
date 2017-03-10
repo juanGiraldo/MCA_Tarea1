@@ -73,7 +73,7 @@ int main(int argc, char *argv[]){
        vtemp[j]=v[j];
        //lfs(x[j],v[j],F[j]);       
     }
-    if(i<1000){
+    if(i%(Nt/1000)==0){
 
     Q1=Q(1,x);
     Q2=Q(2,x);
@@ -106,11 +106,11 @@ double x_n(int n){
 }
 double Q(int k,double *x){
 
-  double Qk=sqrt(2.0/(N+1))*sum_array(x,N);
+  double Qk=sqrt(2.0/(N+1));//*sum_array(x,N);
   int i;
   double sines=0.0;
   for (i=0;i<N;i++){
-     sines +=sin(k*PI*i/N+1);
+     sines +=x[i]*sin(k*PI*i/N+1);
   }
   return Qk*sines;
 }
