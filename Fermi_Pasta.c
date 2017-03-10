@@ -45,6 +45,7 @@ int main(int argc, char *argv[]){
   int i;
   for (i=1;i<N-1;i++){
     x[i]=x_n(i);
+  }
   x[0]=x[N-1]=0.0;
   //de F
   F[0]=0.;
@@ -52,7 +53,6 @@ int main(int argc, char *argv[]){
   //de v
   v[0]=0.;
   v[N-1]=0.;
-  }
   float w1=wk2(1);
   float w2=wk2(2);
   float w3=wk2(3);
@@ -85,14 +85,14 @@ int main(int argc, char *argv[]){
     Q1=Q(1,x_ant);
     Q2=Q(2,x_ant);
     Q3=Q(3,x_ant);
-    Qp1=Q(1,backDeriv(x,x_ant));
-    Qp2=Q(2,backDeriv(x,x_ant));
-    Qp3=Q(3,backDeriv(x,x_ant));
+    Qp1=Q(1,v);
+    Qp2=Q(2,v);
+    Qp3=Q(3,v);
     E1=0.5*(pow(Qp1,2)+w1*pow(Q1,2));
-    E2=0.5*(pow(Qp2,2)+w1*pow(Q2,2));
-    E3=0.5*(pow(Qp3,2)+w1*pow(Q3,2));
+    E2=0.5*(pow(Qp2,2)+w2*pow(Q2,2));
+    E3=0.5*(pow(Qp3,2)+w3*pow(Q3,2));
     //printf("%lf,%.lf,%.lf,%d\n",E1,E2,E3,i);
-    fprintf(energia,"%lf,%.lf,%.lf,%lf\n",E1,E2,E3,i*dt);
+    fprintf(energia,"%lf,%lf,%lf,%lf\n",E1,E2,E3,i*dt);
     }
 
   }
@@ -108,7 +108,7 @@ double x_n(int n){
 }
 double Q(int k,double *x){
 
-  double Qk=sqrt(2.0/(N+1));//*sum_array(x,N);
+  double Qk=sqrt(2.0/(N));//*sum_array(x,N);
   int i;
   double sines=0.0;
   for (i=0;i<N;i++){
