@@ -43,11 +43,9 @@ int main(int argc, char *argv[]){
 
   //condicion inicial de x
   int i;
-  for (i=0;i<N;i++){
+  for (i=1;i<N-1;i++){
     x[i]=x_n(i);
-    if(i==N-1){//ya que PI es una aproximacion, hay que garantizar que x_{N-1} sea 0
-      x[i]=0.;
-    }
+  x[0]=x[N-1]=0.0;
   //de F
   F[0]=0.;
   F[N-1]=0.;

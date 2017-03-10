@@ -1,0 +1,6 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+t=np.genfromtxt("tiempo.txt",dtype "string",usecols=0)
+
+

@@ -82,7 +82,7 @@ int main(int argc, char *argv[]){
        v[j]=vtemp[j]+F[j]*dt;
        x[j]=xtemp[j]+v[j]*dt;
     }
-    if(i%(159970/1000)==0 && i<159970){
+    if(i%(159970/1000)==0 && i<=159970){
 
     Q1=Q(1,x_ant);
     Q2=Q(2,x_ant);

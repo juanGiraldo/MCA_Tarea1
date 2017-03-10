@@ -13,7 +13,7 @@ plt.legend(loc='best')
 plt.xlabel(r'$t$')
 plt.ylabel(r'$E$')
 plt.title(r'$Energia\quad vs.\quad tiempo$')
-plt.savefig("energias.pdf")
+plt.savefig("energiaVsTiempo.pdf")
 
 #grafica de tiempos de ejecucion
 nprocs=np.array((1,2,4))
