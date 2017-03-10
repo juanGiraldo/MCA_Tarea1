@@ -1,0 +1,10 @@
+#include <stdio.h>
+#include <math>
+#include <stdlib.h>
+int main ()
+{
+  double const lambda=3;
+  int const N=100;
+
+  
+}
