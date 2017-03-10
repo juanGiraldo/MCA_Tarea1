@@ -1,4 +1,4 @@
-energias.pdf tiempos.pdf: plotE.py
+energias.pdf : plotE.py energia.txt
 	python plotE.py
 
 energia.txt : a.out

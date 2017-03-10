@@ -1,4 +1,4 @@
-energiaVsTiempo.pdf : plotE.py
+energias.pdf tiempos.pdf: plotE.py energia.txt tiempos.txt
 	python plotE.py
 
 energia.txt : a.out
@@ -10,4 +10,4 @@ a.out : Fermi_Pasta.c
 	gcc -fopenmp Fermi_Pasta.c -lm
 
 clean :
-	rm -rf energiasVsTiempo.pdf a.out tiempo.txt
+	rm -rf energias.pdf a.out tiempo.txt

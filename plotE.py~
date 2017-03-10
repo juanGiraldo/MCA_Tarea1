@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 e=np.genfromtxt("energia.txt",delimiter=',')
-tprocs=np.genfromtxt("tiempo.txt",dtype "string",usecols=0)
+tprocs=np.genfromtxt("tiempo.txt",dtype="string",usecols=0)
 t=e[:,3]
 
 #graficas de energias
